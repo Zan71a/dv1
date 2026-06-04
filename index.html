@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RetailOS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark" data-lucide="store"></div>
+          <div>
+            <strong>RetailOS</strong>
+            <span>Main Branch</span>
+          </div>
+        </div>
+
+        <button class="new-transaction" data-page="sales">
+          <span data-lucide="plus"></span>
+          <span>New Transaction</span>
+        </button>
+
+        <nav class="nav-list" aria-label="Primary">
+          <button class="nav-item active" data-page="dashboard"><span data-lucide="layout-dashboard"></span>Dashboard</button>
+          <button class="nav-item" data-page="sales"><span data-lucide="cash-register"></span>Sales</button>
+          <button class="nav-item" data-page="products"><span data-lucide="package"></span>Products</button>
+          <button class="nav-item" data-page="customers"><span data-lucide="users"></span>Customers</button>
+          <button class="nav-item" data-page="reports"><span data-lucide="bar-chart-3"></span>Reports</button>
+          <button class="nav-item" data-page="suppliers"><span data-lucide="truck"></span>Suppliers</button>
+          <button class="nav-item" data-page="transactions"><span data-lucide="receipt-text"></span>Transactions</button>
+          <button class="nav-item" data-page="settings"><span data-lucide="settings"></span>Settings</button>
+        </nav>
+
+        <div class="sidebar-footer">
+          <button class="nav-item muted" data-action="support"><span data-lucide="headphones"></span>Support</button>
+          <button class="nav-item danger" data-action="logout"><span data-lucide="log-out"></span>Logout</button>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div class="search"><span data-lucide="search"></span><input id="globalSearch" type="search" placeholder="Search..." /></div>
+          <strong>RetailOS</strong>
+          <div class="top-actions">
+            <button class="icon-btn" data-action="notifications" aria-label="Notifications"><span data-lucide="bell"></span><i></i></button>
+            <button class="icon-btn" data-action="help" aria-label="Help"><span data-lucide="circle-help"></span></button>
+            <button class="avatar" data-action="profile" aria-label="Profile">A</button>
+          </div>
+        </header>
+
+        <section class="page active" id="dashboard"></section>
+        <section class="page" id="sales"></section>
+        <section class="page" id="products"></section>
+        <section class="page" id="customers"></section>
+        <section class="page" id="reports"></section>
+        <section class="page" id="suppliers"></section>
+        <section class="page" id="transactions"></section>
+        <section class="page" id="settings"></section>
+      </main>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+      <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="icon-btn modal-close" data-action="close-modal" aria-label="Close"><span data-lucide="x"></span></button>
+        <div class="modal-kicker" id="modalKicker">RetailOS</div>
+        <h2 id="modalTitle">Detail</h2>
+        <div id="modalBody"></div>
+        <div class="modal-actions">
+          <button class="btn" data-action="close-modal">Tutup</button>
+          <button class="btn primary" data-action="confirm-modal">Lanjutkan</button>
+        </div>
+      </section>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
